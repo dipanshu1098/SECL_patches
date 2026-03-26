@@ -1,0 +1,72 @@
+{
+  "organisationName": "I2V",
+  "playerName": "rtspPlayer",
+  "recordingPlayerName": "rtspPlayer",
+  "streamingPort": 8080,
+  "Protocol": "tcp",
+  "ApplicationLogoUrl": "assets/i2v.png",
+  "UserLogoUrl": "assets/Logo_i2V_14July2017_Final-01.png",
+  "languages": [
+    {
+      "id": "en",
+      "title": "English",
+      "flag": "us"
+    },
+    {
+      "id": "hi",
+      "title": "Hindi",
+      "flag": "hi"
+    }
+  ],
+  "camera_discovery_port": 8192,
+  "system_info_port":  8191,
+  "SmtpServer_Port": [
+    {
+      "smtpServer": "smtp.gmail.com",
+      "smtpPort": 587
+    },
+    {
+      "smtpServer": "smtp.live.com",
+      "smtpPort": 587
+    },
+    {
+      "smtpServer": "smtp.mail.yahoo.com",
+      "smtpPort": 465
+    }
+  ],
+  "analytic_server_ip": "",
+  "mode": "ANPR",
+  "PlayerIp": "127.0.0.1",
+  "StreamerIp": "127.0.0.1",
+  "Playbackviaapache": "1",
+  "Speed_Violation_Price": 1500,
+  "Helmet_Violation_Price": 1000,
+  "Triple_Riding_Violation_Price": 1000,
+  "RedLight_Violation_Price": 1000,
+  "VehicleDetails": [
+    {
+      "OwnerName": "MRS MINAKSHI SINGH",
+      "OwnerRelativeName": "SH JITENDRA SINGH",
+      "PermanentAddress": "CHAR SAHAR KA NAKA GWALIOR",
+      "cityName": "GWALIOR",
+      "PhoneNumber": "9425116186",
+      "EmailId": "minakshiSingh123@gmail.com",
+      "DeliveryStatus": "Pending",
+      "PaymentStatus": "Not Paid",
+      "VehicleType": "SOLO",
+      "VehicleClass": "M-Cycle/Scooter(2WN)",
+      "EngineNumber": "DJXXXXXX86",
+      "FuelType": "PETROL",
+      "Color": "M Black DD",
+      "VehicleModel": "BAJAJ AUTO LTD,PULSAR 180",
+      "FitUpto": "27-April-2029",
+      "RegistrationDate": "29-May-2014",
+      "TaxValidity": "27-April-2029",
+      "VehicleCategory": "2WN",
+      "RegisteredRto": "CHANDIGARH UT(RLA AND STA),Chandigarh"
+    }
+  ],
+  "ShowChallanTab": true,
+  "CameraNameEditable" : true
+
+}

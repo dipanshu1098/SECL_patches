@@ -1,0 +1,18 @@
+﻿ALTER TABLE public."Filter" DROP CONSTRAINT "FK_Filter_EventMapping_EventMappingId";
+ALTER TABLE public."Node" DROP CONSTRAINT "FK_Node_EventMapping_EventMappingId";
+DROP TABLE public."CustomField";
+DROP TABLE public."EventMapping";
+DROP TABLE public."CustomEvent";
+DROP INDEX public."IX_Node_EventMappingId";
+DROP INDEX public."IX_Filter_EventMappingId";
+ALTER TABLE public."ResourceType" DROP COLUMN "Properties";
+ALTER TABLE public."Resources" DROP COLUMN "Presets";
+ALTER TABLE public."Node" DROP COLUMN "EventMappingId";
+ALTER TABLE public."Filter" DROP COLUMN "EventMappingId";
+ALTER TABLE public."CategoryData" DROP COLUMN "Details";
+ALTER TABLE public."AspNetUsers" DROP COLUMN "Notifications";
+ALTER TABLE public."Actions" DROP COLUMN "Email_Ids";
+ALTER TABLE public."Actions" DROP COLUMN "Mobile_Numbers";
+ALTER TABLE public."CategoryData" ADD "Details_string" text NULL;
+ALTER TABLE public."Actions" ADD "Email_Ids_string" text NULL;
+ALTER TABLE public."Actions" ADD "Mobile_Numbers_string" text NULL;

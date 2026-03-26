@@ -1,0 +1,12 @@
+﻿INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','AddCategory');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','EditCategory');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','DeleteCategory');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','EditConfiguration');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','AddAction');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','EditAction');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','DeleteAction');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','Editi2vVMSConfig');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','EditSMSGatewayDetailsConfig');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','EditEmailServerDetailsConfig');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','EditCategorySettingConfig');
+INSERT INTO public."AspNetRoleClaims" ("RoleId","ClaimType","ClaimValue") VALUES (100,'Rights','ExportReportData');

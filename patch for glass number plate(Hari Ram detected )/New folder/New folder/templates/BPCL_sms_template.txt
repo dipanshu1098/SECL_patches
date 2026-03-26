@@ -1,0 +1,1 @@
+Overspeed violation detected for vehicle number {0}@{1}KM/H on camera {2}. Kindly adhere to the permissible speed limits. BPCL BR.

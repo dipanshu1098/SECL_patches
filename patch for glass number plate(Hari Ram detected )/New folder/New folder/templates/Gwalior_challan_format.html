@@ -1,0 +1,131 @@
+﻿<div class="dialog-content-wrapper">
+    <mat-toolbar class="mat-accent m-0">
+        <mat-toolbar-row style="display:flex;width:100%;flex-direction:row;justify-content:space-between">
+            <span class="title dialog-title">Genrate Echallan</span>
+            <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div mat-dialog-content class="p-0 m-0" style="overflow:auto">
+        <div style="display:flex;flex-direction:column;height:70vh;">
+            <div style="height:calc(100% - 50px);overflow:auto">
+                <div *ngIf="dataNotFound" style="display:flex;flex-direction:row;justify-content:space-between;background-color:red">
+                    <span style="font-size:17px;margin:4px">Vehicle Details Not Found</span>
+                    <button mat-icon-button color="primary" (click)="dataNotFound = false"><mat-icon>clear</mat-icon></button>
+                </div>
+                <kendo-pdf-export style="height:100%" #pdf paperSize="A4" margin="1cm" [scale]="0.6" forcePageBreak=".page-break">
+                    <div style="display:block;width:100%;height:1400px;color:#464b59">
+                        <div class="w-100-p" style="text-align:center">
+                            <img style="height:100px;width:100%" src="assets/content.png" />
+                        </div>
+                        <div class="w-100-p" style="margin-top:12px;margin-bottom:40px;width:100%;height:100px">
+                            <img src="assets/head.PNG" style="width:100%" />
+                            <div style="display:flex;width:100%">
+                                <img src="assets/number.PNG" style="width:45px" /><span>{{row.plateNumber}}</span>  <img style="width: calc(100% - 150px)" src="assets/niyam.PNG" />
+                            </div>
+                            <img style="width:100%" src="assets/1988.PNG" />
+                        </div>
+                        <div style="margin-bottom:20px;width:100%">
+                            <table style="width:100%;margin-bottom:24px;margin-top:24px">
+                                <tr style="width:100%;">
+                                    <td [ngStyle]='{"width": "12%"}' class="challanColumn">
+                                        City
+                                    </td>
+                                    <td [ngStyle]='{"width":"17%"}' class="challanColumn">
+                                        Challan Number
+                                    </td>
+                                    <td [ngStyle]='{"width":"17%"}' class="challanColumn">
+                                        Vehicle Number
+                                    </td>
+                                    <td [ngStyle]='{"width": "22%"}' class="challanColumn">
+                                        Vehicle Class
+                                    </td>
+                                    <td [ngStyle]='{"width": "17%"}' class="challanColumn">
+                                        Place of Violation
+                                    </td>
+                                    <td [ngStyle]='{"width": "17%"}' class="challanColumn">
+                                        Date & Time of Detection
+                                    </td>
+                                </tr>
+                                <tr style="width:100%">
+                                    <td style="padding:5px;padding-bottom:20px" [ngStyle]='{"width": "17%"}' class="challanColumn">
+                                        <span>{{city}}</span>
+                                    </td>
+                                    <td style="padding:5px;padding-bottom:20px" [ngStyle]='{"width": "17%"}' class="challanColumn">
+                                        <span>{{challanNumber}}</span>
+                                    </td>
+                                    <td style="padding:5px;padding-bottom:20px" [ngStyle]='{"width": "17%"}' class="challanColumn">
+                                        <span>{{row.plateNumber}}</span>
+                                    </td>
+                                    <td style="padding:5px;padding-bottom:20px" [ngStyle]='{"width": "17%"}' class="challanColumn">
+                                        <span>{{vehicleDetails.Class}}</span>
+                                    </td>
+                                    <td [ngStyle]='{"width": "17%"}' style="padding:5px;padding-bottom:20px" class="challanColumn">
+                                        <span>{{placeOfViolation}}</span>
+                                    </td>
+                                    <td [ngStyle]='{"width": "17%"}' style="padding:5px;padding-bottom:20px" class="challanColumn">
+                                        <span>{{offenceDate}}&nbsp;&nbsp;&nbsp; {{offenceTime}}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="display:flex;flex-direction:row;margin-bottom:10px;width:100%">
+                                <div style="width:50%;display:flex;flex-direction:column;text-align:center;padding:4px">
+                                    <img src={{row.violationImgPath}} height="200" />
+                                </div>
+                                <div style="width:50%;padding:4px">
+
+                                    <img src={{row.plateImgPath}} height="50" />
+                                    <img src={{row.fullImgPath}} height="150" style="width:100%" />
+                                </div>
+                            </div>
+                            <div class="col-sm-12" style="text-align:center;display:flex;flex-direction:column;margin-bottom:15px">
+                                <!--<img style="height:40px;width:100%" src="assets/violationHeading.PNG" />
+                                <div style="display:flex;flex-direction:column">
+                                  <div *ngFor="let violation of violations;let index = index" style="display:flex;flex-direction:row">
+                                    <span style="font-weight:900;font-size:21px;margin:2px">{{index + 1}}.</span>
+                                    <img style="height:30px;width:calc( 100% - 15px)" [src]="violation.image" />
+                                  </div>
+                                </div>-->
+                                <img src="assets/redLightViolated.PNG" style="width:100%" />
+                            </div>
+                            <!--<div class="col-sm-12" style="text-align:center;display:flex;flex-direction:column">
+                              <div style="display:flex;flex-direction:row;width:100%">
+                                <img src="assets/total1.PNG" style="width:20%" />
+                                <span style="font-weight:900;font-size:21px;margin-left:5px;margin-right:5px;padding:2px">{{amount}}</span>
+                                <img src="assets/total2.PNG" style="width:76%" />
+                              </div>
+                              <div style="display:flex;flex-direction:row;width:100%">
+                                <img src="assets/total3.PNG" style="margin-left:20px;margin-right:20px;width:100%" />
+                              </div>
+                            </div>-->
+                            <div style="border:1px solid black;margin-left:20px;margin-bottom:15px" class="col-sm-6">
+                                <img src="assets/prati.PNG" style="height:20px" /><br />
+                                MR/MRS - {{vehicleDetails.OwnerName}}<br />
+                                S/O,D/O - {{vehicleDetails.OwnerRelativeName}}<br />
+                                R/O - {{vehicleDetails.PermanentAddress}}<br />
+                                {{vehicleDetails.cityName}}<br />
+                                MOBILE NO - {{vehicleDetails.PhoneNumber}}<br />
+                            </div>
+
+                            <div class="col-sm-12" style="text-align:center;">
+                                <img style="width:100%;height:100px" src="assets/footer.PNG" />
+                            </div>
+                            <div class="col-sm-12" style="text-align:center;padding-left:0px !important;">
+                                <img style="width:100%" src="assets/footer-appended.PNG" />
+                            </div>
+                        </div>
+                    </div>
+                </kendo-pdf-export>
+            </div>
+
+            <div *ngIf="!doNotShowGenerateButton" style="width:100%;height:60px;padding:12px">
+                <button *ngIf="loaded" mat-raised-button color="accent" [disabled]="dataNotFound" style="position:relative;float:right;margin-bottom:10px;margin-right:10px" (click)="downloadPdf()">Generate Pdf</button>
+                <mat-spinner *ngIf="!loaded" diameter="30" style="position:relative;float:right;margin-bottom:10px;margin-right:10px"></mat-spinner>
+            </div>
+        </div>
+
+
+    </div>
+</div>

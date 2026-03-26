@@ -1,0 +1,1 @@
+ALTER TABLE public."ResourceAnalytics" ADD "ApplyAnalytics" boolean NULL DEFAULT TRUE;

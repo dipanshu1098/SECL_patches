@@ -1,0 +1,18 @@
+{
+    "hello": "Olá, {{name}}!",
+    "view event": "घटना देखें",
+    "clear list": "सूची हटाएं",
+    "search parameter" : "पैरामीटर खोज",
+    "apply filter": "फ़िल्टर लगाये",
+    "clear filter": "फ़िल्टर हटाएं",
+    "event id": "घटना की आईडी",
+    "device name" : "डिवाइस का नाम",
+    "event name": "घटना का नाम",
+    "speed": "गति",
+    "color": "रंग",
+    "view": "देखें",
+    "events": "घटनाएं",
+    "create a node": "नोड बनाएं"
+
+}
+  

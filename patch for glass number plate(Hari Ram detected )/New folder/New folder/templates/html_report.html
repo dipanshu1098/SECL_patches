@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script type="text/javascript" src="./paginationfiles/jquery.js"></script>
+    <link rel="stylesheet" href="./paginationfiles/bootstrap.min.css">
+    <style>
+        th {
+            padding: 15px;
+            text-align: center;
+            font-weight: 400
+        }
+
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+
+
+        thead tr {
+            font-family: Roboto, Helvetica Neue, sans-serif
+        }
+        table img{
+            width:100px;
+            height:40px;
+        }
+    </style>
+</head>
+<body style='Margin:0; background-color:rgb(239, 241, 243); min-width:100%; padding:0;'>
+    <div style='text-align: center;margin-bottom:10px'>
+        <img src='./paginationfiles/i2v.png' style="width: 150px;height: 130px;"/>
+    </div>
+    <div style='text-align: center;margin-bottom:30px'>
+        <span style='font-size: 20px; font-weight: 800;'>Report</span>
+        <span style='font-size:20px; font-weight:400;'>
+            ({startDate} to {endDate})
+        </span>
+    </div>
+    <input id="myInput" type="text" class="form-control" style="width:400px;float:right;" placeholder="Search..">
+    <input type="number" class="form-control" style="width:100px;float:left;" placeholder="no of rows" onchange="rowChanged(this.value)">
+
+    <table class="table table-striped" id="myTable">
+        <thead class="thead-dark"></thead>
+        <tbody id="myTableBody"></tbody>
+    </table>
+    <ul class="pagination pagination-sm" style="margin:0px 10px">
+        <li class="page-item" style="margin-right:10px" onclick="showFirstPage()">
+            <a class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item" onclick="pageChange('prev')">
+            <a class="page-link" href="#">Previous</a>
+        </li>
+        <li class="page-item" onclick="pageChange('next')">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        <li class="page-item" onclick="showLastPage()">
+            <a class="page-link"  aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+    <label id="totalCount" style="margin-top: 3px"></label>
+
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTableBody tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+<script type="text/javascript" src="./paginationfiles/pagination.js"></script>

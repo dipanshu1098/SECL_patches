@@ -1,0 +1,61 @@
+// Navy
+$navy-00: #D5DBDF;
+$navy-10: #C92629;
+$navy-25: #E46E71;
+$navy-50: #FFF1DF;
+$navy-100: #E5F6FF;
+$navy-200: #ACB7BE;
+$navy-300: #59707E;
+$navy-400: #304C5D;
+$navy-500: #06283D;
+
+// Blue/Light
+$blue-light-100: #E5F6FF;
+$blue-light-200: #B3E5FF;
+$blue-light-300: #0099ED;
+$blue-light-500: #008EDB;
+$blue-light-600: #0074B2;
+
+// Red/Light
+$red-light-brand: #C92629;
+$red-light-10: #FFFAF4;
+$red-light-25: #FAEAEA;
+$red-light-50: #F6CECF;
+$red-light-100: #EC9E9F;
+$red-light-200: #FF9F29;
+$red-light-300: #DB3E41;
+$red-light-400: #C92629;
+$red-light-500: #C92629;
+$red-light-600: #80181A;
+
+// Yellow
+$yellow-5: #FFF6EA;
+$yellow-10: #FFF1DF;
+$yellow-25: #FFF1DF;
+$yellow-50: #FFF6EA;
+$yellow-75: #FFFAF4;
+$yellow-100: #FFE7C9;
+$yellow-200: #FFB75F;
+$yellow-300: #FF731D;
+
+// Green
+$green-10: #42855B;
+$green-25: #42855B;
+$green-50: #42855B;
+$green-75: #42855B;
+$green-100: #42855B;
+$green-200: #42855B;
+$green-300: #22452F;
+
+// Fire (Assuming this is for a fire-related color)
+$fire: #C92629;
+
+// Pumpkin orange (Assuming this is for a pumpkin-related color)
+$pumpkin-orange: #CC7000;
+
+// Linear gradients
+$gradient-one: linear-gradient(to right, $red-light-600, $yellow-300, $green-300);
+$gradient-two: linear-gradient(to right, $red-light-500, $yellow-200, $green-200);
+$gradient-three: linear-gradient(to right, $red-light-400, $yellow-100, $green-100);
+
+

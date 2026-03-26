@@ -1,0 +1,104 @@
+﻿<div class="dialog-content-wrapper">
+    <mat-toolbar class="mat-accent m-0">
+        <mat-toolbar-row style="display:flex;width:100%;flex-direction:row;justify-content:space-between">
+            <span class="title dialog-title">Genrate Echallan</span>
+            <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div mat-dialog-content class="p-0 m-0" style="overflow:auto">
+        <div style="display:flex;flex-direction:column;height:70vh;">
+            <div style="height:calc(100% - 50px);overflow:auto">
+                <kendo-pdf-export style="height:100%" #pdf paperSize="A4" margin="1cm" [scale]="0.7">
+                    <div style="display:block;width:auto;height:1200px">
+                        <div class="col-sm-12" style="text-align:center">
+                            <img style="height:400px;width:100%" src="assets/content1.png" />
+                        </div>
+                        <div class="col-sm-12" style="margin-bottom:40px">
+                            <table style="width:calc(100% - 60px);border:1px solid black;margin-left:30px;margin-right:30px;margin-bottom:10px">
+                                <tr style="width:100%;border:1px solid black">
+                                    <td [ngStyle]='{"width": row.speedViolated ? "20%" : "25%"}' class="challanColumn">
+                                        <img style="height:30px;width:100%" src="assets/dateImage.PNG" />
+                                    </td>
+                                    <td [ngStyle]='{"width": row.speedViolated ? "20%" : "25%"}' class="challanColumn">
+                                        <img style="height:30px;width:100%" src="assets/samay.PNG" />
+                                    </td>
+                                    <td [ngStyle]='{"width": row.speedViolated ? "20%" : "25%"}' class="challanColumn">
+                                        <img style="height:30px;width:100%" src="assets/vahanNumber.PNG" />
+                                    </td>
+                                    <td [ngStyle]='{"width": row.speedViolated ? "20%" : "25%"}' class="challanColumn">
+                                        <img style="height:30px;width:100%" src="assets/ullanghan.PNG" />
+                                    </td>
+                                    <td *ngIf="row.speedViolated" [ngStyle]='{"width": "20%"}' class="challanColumn">
+                                        <img style="height:30px;width:100%" src="assets/speed.png" />
+                                    </td>
+                                </tr>
+                                <tr style="width:100%">
+                                    <td style="padding:5px;padding-bottom:20px" [ngStyle]='{"width": row.speedViolated ? "20%" : "25%"}' class="challanColumn">
+                                        <span>{{offenceDate}}</span>
+                                    </td>
+                                    <td style="padding:5px;padding-bottom:20px" [ngStyle]='{"width": row.speedViolated ? "20%" : "25%"}' class="challanColumn">
+                                        <span>{{offenceTime}}</span>
+                                    </td>
+                                    <td style="padding:5px;padding-bottom:20px" [ngStyle]='{"width": row.speedViolated ? "20%" : "25%"}' class="challanColumn">
+                                        <span>{{row.plateNumber}}</span>
+                                    </td>
+                                    <td style="padding:5px;padding-bottom:20px" [ngStyle]='{"width": row.speedViolated ? "20%" : "25%"}' class="challanColumn">
+                                        <span>{{violation}}</span>
+                                    </td>
+                                    <td *ngIf="row.speedViolated" [ngStyle]='{"width": "20%"}' style="padding:5px;padding-bottom:20px" class="challanColumn">
+                                        <span>{{row.speed}}&nbsp; Km/h</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="col-sm-12" style="display:flex;flex-direction:row;margin-bottom:15px">
+                                <div style="width:50%;display:flex;flex-direction:column;text-align:center;padding:4px">
+                                    <span style="font-weight:900;font-size:17px">LICENSE PLATE IMAGE</span>
+                                    <img src={{row.plateImgPath}} height="200" style="margin-left:30px" />
+                                </div>
+                                <div style="width:50%;display:flex;flex-direction:column;text-align:center;padding:4px">
+                                    <span style="font-weight:900;font-size:17px">FULL IMAGE</span>
+                                    <img src={{row.fullImgPath}} height="200" style="margin-right:30px" />
+                                </div>
+                            </div>
+                            <div class="col-sm-12" style="text-align:center;display:flex;flex-direction:column;margin-bottom:25px">
+                                <img style="height:40px;width:100%" src="assets/violationHeading.PNG" />
+                                <div style="display:flex;flex-direction:column">
+                                    <div *ngFor="let violation of violations;let index = index" style="display:flex;flex-direction:row">
+                                        <span style="font-weight:900;font-size:21px;margin:2px">{{index + 1}}.</span>
+                                        <img style="height:30px;width:calc( 100% - 50px)" [src]="violation.image" />
+                                        <span style="font-weight:900;font-size:21px;padding:2px">{{violation.price}}</span>
+                                        <img src="assets/rupee.PNG" style="width:15%" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12" style="text-align:center;display:flex;flex-direction:column">
+                                <div style="display:flex;flex-direction:row;width:96%">
+                                    <img src="assets/total1.PNG" style="width:20%" />
+                                    <span style="font-weight:900;font-size:21px;margin-left:5px;margin-right:5px;padding:2px">{{amount}}</span>
+                                    <img src="assets/total2.PNG" style="width:76%" />
+                                </div>
+                                <div style="display:flex;flex-direction:row;width:100%">
+                                    <img src="assets/total3.PNG" style="margin-left:20px;margin-right:20px;width:100%" />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12" style="text-align:center">
+                                <img style="width:100%" src="assets/footer1.PNG" />
+                            </div>
+                        </div>
+                    </div>
+                </kendo-pdf-export>
+            </div>
+
+            <div style="width:100%;height:60px;padding:12px">
+                <button mat-raised-button color="accent" [disabled]="dataNotFound" style="position:relative;float:right;margin-bottom:10px;" (click)="downloadPdf()">Generate Pdf</button>
+                <mat-spinner *ngIf="!loaded" diameter="30" style="position:relative;float:right;margin-bottom:10px;margin-right:10px"></mat-spinner>
+            </div>
+        </div>
+
+
+    </div>
+</div>
