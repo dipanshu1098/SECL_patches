@@ -1,0 +1,32 @@
+description: Ultralytics best model trained on dataset.yaml
+author: Ultralytics
+license: AGPL-3.0 https://ultralytics.com/license
+version: 8.0.121
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 960
+- 960
+names:
+  0: car
+  1: jeep
+  2: van
+  3: mini-truck
+  4: truck
+  5: tractor
+  6: motorcycle
+  7: bus
+  8: mini-bus
+  9: auto-rickshaw
+  10: e-rickshaw
+  11: bicycle
+  12: rickshaw
+  13: ambulance
+  14: police-car
+  15: fire-truck
+  16: person
+  17: other
+  18: fire
+  19: smoke
+  20: train
